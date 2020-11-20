@@ -1,0 +1,21 @@
+FrstRslt = input("Введите результат первого дня:  ")
+print("Руезультат первого дня", FrstRslt)
+FrstRslt = float(FrstRslt)
+FrstRslt1 = FrstRslt
+Goal = input('Введите целевые значения: ')
+print('Целевые значения', Goal)
+Goal = float(Goal)
+i = 1
+while(FrstRslt1 <= Goal):
+    FrstRslt1 = FrstRslt1 * 1.1
+    i = i + 1
+i = i
+print ('Срок занятия:', i)
+i = int (i)
+k = 1
+FrstRslt1 = FrstRslt
+while(k <= i and FrstRslt1 <= Goal):
+    print('День:', k, 'Растояние', "%.2f" % (FrstRslt1 ))
+    FrstRslt1 = FrstRslt1 * 1.1
+    k = k + 1
+print('День:', i, 'Растояние', "%.2f" % (Goal))
