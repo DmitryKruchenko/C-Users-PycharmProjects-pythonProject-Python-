@@ -1,7 +1,13 @@
-User_name = input("Введите свое имя: ")
-print(User_name)
-User_surname = input( "Введите свою фамилию: ")
-print(User_surname)
-User_age = int (input("Введите свой возраст: "))
-print(User_age)
-print(User_name, User_surname, User_age)
+my_list = [True, 'thgl', 2, 3, 43.5, 3.4]
+print(my_list)
+numb_list = len(my_list)
+print(numb_list)
+i = 0
+while i < numb_list:
+    print (type(my_list[i]))
+    i = i + 1
+
+
+#for i in my_list:
+  #  print(type(my_list[i]))
+#  ХЗ , for  не желает работать от слова совсем, не хочу тратить время

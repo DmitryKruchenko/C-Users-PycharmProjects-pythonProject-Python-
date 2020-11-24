@@ -1,21 +1,57 @@
-FrstRslt = input("Введите результат первого дня:  ")
-print("Руезультат первого дня", FrstRslt)
-FrstRslt = float(FrstRslt)
-FrstRslt1 = FrstRslt
-Goal = input('Введите целевые значения: ')
-print('Целевые значения', Goal)
-Goal = float(Goal)
-i = 1
-while(FrstRslt1 <= Goal):
-    FrstRslt1 = FrstRslt1 * 1.1
+struct_base = ('ФИО', 'пол', 'год рождения', 'телефон') # кортеж - неизменяемый, задает структуру бд
+numb_client = 2 # количество вводимых клиентов
+clients = list()
+clients_name = list()
+clients_gender = list()
+clients_year = list()
+clients_phone = list()
+
+clients_name.append('ФИО клиентов:  ')
+clients_gender.append('Пол клиентов:  ')
+clients_year.append('Возраст клиентов:  ')
+clients_phone.append('Контакты клиентов:  ')
+
+
+i = 0
+while i < numb_client:
+    family = input('Введите свою Фамилию:   ')
+    family.capitalize()                                             #нихера не работает!!!!!!!
+    #print(family)                                                  - для проверки работы capitalize()
+    name = input('Введите свое имя: ')
+    name.capitalize()
+    last_name = input('Введите свое отчество: ')
+    last_name.capitalize()
+    fio = family + ' ' + name + ' ' + last_name
+    print(fio)
+    key0 = 'ФИО'
+
+    gender = input('Введите свой пол "м" или "ж":   ')
+    print(gender)
+    key1 = 'пол'
+
+    born_year = int(input('Введите год рождения:    '))
+    print(born_year)
+    key2 = 'год_рождения'
+
+    phone = input('Введите свой номер телефона:        ')
+    print(phone)
+    key3 = 'телефон'
+
+    db_clients = dict(ФИО = fio, пол = gender, год_рождения = born_year, телефон = phone)
+    #print(db_clients)
+    client = list((i, db_clients))
+    #print(client)
+    clients.append(client)
+
+    clients_name.append(fio)
+    clients_gender.append(gender)
+    clients_year.append(born_year)
+    clients_phone.append(phone)
+
+
     i = i + 1
-i = i
-print ('Срок занятия:', i)
-i = int (i)
-k = 1
-FrstRslt1 = FrstRslt
-while(k <= i and FrstRslt1 <= Goal):
-    print('День:', k, 'Растояние', "%.2f" % (FrstRslt1 ))
-    FrstRslt1 = FrstRslt1 * 1.1
-    k = k + 1
-print('День:', i, 'Растояние', "%.2f" % (Goal))
+print(clients)
+print(clients_name)
+print(clients_gender)
+print(clients_year)
+print(clients_phone)
